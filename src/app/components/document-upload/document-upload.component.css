@@ -1,0 +1,48 @@
+.document-upload-container {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px dashed #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+}
+
+.document-upload-container h3 {
+  margin-top: 0;
+  color: #555;
+}
+
+.document-upload-container .form-group {
+  margin-bottom: 15px;
+}
+
+.document-upload-container input[type="file"] {
+  margin-right: 10px;
+}
+
+.document-upload-container button {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.document-upload-container button:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.document-upload-container button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.upload-success-message {
+  color: green;
+  margin-top: 10px;
+}
+
+.upload-error-message {
+  color: red;
+  margin-top: 10px;
+}

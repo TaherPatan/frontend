@@ -1,0 +1,19 @@
+<div class="document-list-container">
+  <h2>Documents</h2>
+
+  <app-document-upload></app-document-upload>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <ul>
+    <li *ngFor="let document of documents">
+      {{ document.title }} ({{ document.filename }}) - Uploaded: {{ document.upload_time | date }}
+      <span *ngIf="document.ingestionStatus">Status: {{ document.ingestionStatus }}</span>
+      <button (click)="triggerIngestion(document.id)" [disabled]="document.ingestionStatus === 'pending' || document.ingestionStatus === 'processing'">Trigger Ingestion</button>
+      <button (click)="deleteDocument(document.id)">Delete</button>
+      <button (click)="downloadDocument(document.id, document.filename)">Download</button>
+    </li>
+  </ul>
+</div>

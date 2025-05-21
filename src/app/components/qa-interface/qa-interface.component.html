@@ -1,0 +1,17 @@
+<div class="qa-interface-container">
+  <h2>Document Q&A</h2>
+
+  <div class="question-input">
+    <input type="text" [(ngModel)]="question" placeholder="Ask a question about the documents...">
+    <button (click)="askQuestion()">Ask</button>
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="answer" class="answer-area">
+    <h3>Answer:</h3>
+    <p>{{ answer }}</p>
+  </div>
+</div>

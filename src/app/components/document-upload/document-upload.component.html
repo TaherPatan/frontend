@@ -1,0 +1,18 @@
+<div class="document-upload-container">
+  <h2>Upload Document</h2>
+
+  <div class="form-group">
+    <label for="file">Select File:</label>
+    <input type="file" id="file" (change)="onFileSelected($event)">
+  </div>
+
+  <button (click)="uploadDocument()" [disabled]="!selectedFile">Upload</button>
+
+  <div *ngIf="uploadSuccess" class="success-message">
+    File uploaded successfully!
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+</div>

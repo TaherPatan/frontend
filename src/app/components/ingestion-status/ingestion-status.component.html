@@ -1,0 +1,19 @@
+<div class="ingestion-status-container">
+  <h2>Ingestion Status</h2>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="getTaskIds().length === 0">
+    <p>No ingestion tasks found.</p>
+  </div>
+
+  <ul>
+    <li *ngFor="let taskId of getTaskIds()">
+      <strong>Document ID:</strong> {{ taskId }} <br>
+      <strong>Status:</strong> {{ ingestionTasks[taskId].status }} <br>
+      <span *ngIf="ingestionTasks[taskId].message"><strong>Message:</strong> {{ ingestionTasks[taskId].message }}</span>
+    </li>
+  </ul>
+</div>
